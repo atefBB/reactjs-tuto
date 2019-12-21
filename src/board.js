@@ -4,7 +4,11 @@ import Square from "./square";
 export default function Board() {
     var [squares, setSquares] = React.useState(Array(9).fill(null));
     
-    function handleClick(value) {}
+    function handleClick(value) {
+      const handlerSquares = squares.slice();
+      handlerSquares[value] = "X";
+      setSquares(handlerSquares);
+    }
 
     function renderSquare(i) {
       return <Square 
