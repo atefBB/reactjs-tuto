@@ -5,7 +5,7 @@ export default function Board() {
     var [squares, setSquares] = React.useState(Array(9).fill(null));
 
     function renderSquare(i) {
-      return <Square />;
+      return <Square value={i} />;
     }
 
     const status = 'Next player: X';
