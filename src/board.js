@@ -3,9 +3,14 @@ import Square from "./square";
 
 export default function Board() {
     var [squares, setSquares] = React.useState(Array(9).fill(null));
+    
+    function handleClick(value) {}
 
     function renderSquare(i) {
-      return <Square value={i} />;
+      return <Square 
+         value={squares[i]} 
+         onClick={() => handleClick(i)}
+       />;
     }
 
     const status = 'Next player: X';
