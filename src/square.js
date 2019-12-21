@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Square(props) {
-    var [squareValue, setSquareValue] = React.useState(null);
+    var [squareValue, setSquareValue] = React.useState(props.value);
 
     return (
       <button 
