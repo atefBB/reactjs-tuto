@@ -7,8 +7,9 @@ export default function Board() {
 
     function handleClick(value) {
       const handlerSquares = squares.slice();
-      handlerSquares[value] = "X";
+      handlerSquares[value] = xIsNext? "X" : "O";
       setSquares(handlerSquares);
+      setXIsNext(!xIsNext);
     }
 
     function renderSquare(i) {
