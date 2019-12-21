@@ -3,7 +3,8 @@ import Square from "./square";
 
 export default function Board() {
     var [squares, setSquares] = React.useState(Array(9).fill(null));
-    
+    var [xIsNext, setXIsNext] = React.useState(true);
+
     function handleClick(value) {
       const handlerSquares = squares.slice();
       handlerSquares[value] = "X";
