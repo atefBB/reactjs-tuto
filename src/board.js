@@ -2,6 +2,8 @@ import React from "react";
 import Square from "./square";
 
 export default function Board() {
+    var [squares, setSquares] = React.useState(Array(9).fill(null));
+
     function renderSquare(i) {
       return <Square />;
     }
