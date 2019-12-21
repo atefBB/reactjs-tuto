@@ -1,5 +1,6 @@
 import React from "react";
 import Square from "./square";
+import calculateWinner from "./calculate-winner";
 
 export default function Board() {
     var [squares, setSquares] = React.useState(Array(9).fill(null));
@@ -7,6 +8,9 @@ export default function Board() {
 
     function handleClick(value) {
       const handlerSquares = squares.slice();
+      if (calculateWinner(squares) || squares[value]) {
+        return;
+      }
       handlerSquares[value] = xIsNext? "X" : "O";
       setSquares(handlerSquares);
       setXIsNext(!xIsNext);
@@ -19,7 +23,13 @@ export default function Board() {
        />;
     }
 
-    const status = `Next player: ${xIsNext? 'X' : 'O'}`;
+    const winner = calculateWinner(squares);
+    let status;
+    if (winner) {
+      status = `Winner: ${winner}`;
+    } else {
+      status = `Next player: ${xIsNext ? 'X' : 'O'}`;
+    }
 
     return (
       <div>
