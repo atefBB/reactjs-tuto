@@ -1,14 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-
-function Square() {
-    return (
-      <button className="square">
-        {/* TODO */}
-      </button>
-    );
-}
+import Square from "./square";
 
 function Board() {
     function renderSquare(i) {
