@@ -25,7 +25,6 @@ export default function Board(props) {
 
     return (
       <div>
-        <div className="status">{status}</div>
         <div className="board-row">
           {renderSquare(0)}
           {renderSquare(1)}
