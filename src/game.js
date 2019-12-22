@@ -7,6 +7,7 @@ export default function Game() {
         squares: Array(9).fill(null),
     }]);
     var [xIsNext, setXIsNext] = React.useState(true);
+    var [stepNumber, setStepNumber] = React.useState(0);
 
     function handleClick(i) {
       const gameHistory = history;
