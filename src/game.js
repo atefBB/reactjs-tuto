@@ -33,7 +33,7 @@ export default function Game() {
     }
 
     const gameHistory = history;
-    const current = gameHistory[gameHistory.length - 1];
+    const current = gameHistory[stepNumber];
     const winner = calculateWinner(current.squares);
 
     const moves = gameHistory.map((step, move) => {
