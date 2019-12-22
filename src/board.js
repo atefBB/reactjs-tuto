@@ -2,7 +2,7 @@ import React from "react";
 import Square from "./square";
 import calculateWinner from "./calculate-winner";
 
-export default function Board() {
+export default function Board(props) {
     var [squares, setSquares] = React.useState(Array(9).fill(null));
     var [xIsNext, setXIsNext] = React.useState(true);
 
@@ -18,8 +18,8 @@ export default function Board() {
 
     function renderSquare(i) {
       return <Square 
-         value={squares[i]} 
-         onClick={() => handleClick(i)}
+         value={props.squares[i]} 
+         onClick={() => props.onClick(i)}
        />;
     }
 
