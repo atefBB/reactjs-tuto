@@ -10,7 +10,7 @@ export default function Game() {
     var [stepNumber, setStepNumber] = React.useState(0);
 
     function handleClick(i) {
-      const gameHistory = history;
+      const gameHistory = history.slice(0, stepNumber + 1);
       const current = gameHistory[gameHistory.length - 1];
       const squares = current.squares.slice();
       
@@ -23,7 +23,7 @@ export default function Game() {
       setHistory(history.concat([{
          squares: squares
       }]));
-
+      setStepNumber(gameHistory.length);
       setXIsNext(!xIsNext);
     }
 
