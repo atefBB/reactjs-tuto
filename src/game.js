@@ -8,18 +8,23 @@ export default function Game() {
     }]);
     var [xIsNext, setXIsNext] = React.useState(true);
 
-    const gameHistory = history;
-    const current = gameHistory[gameHistory.length - 1];
-    const winner = calculateWinner(current.squares);
+    function handleClick(i) {
+      const gameHistory = history;
+      const current = gameHistory[gameHistory.length - 1];
+      const squares = current.squares.slice();
+      
+      if(calculateWinner(squares) || squares[i]) {
+         return;
+      } 
+     
+      squares[i] = xIsNext? "X" : "O";
 
-    let status;
-    if (winner) {
-      status = `Winner: ${winner}`;
-    } else {
-      status = `Next player: ${xIsNext ? 'X' : 'O'}`;
+      setHistory(history.concat([{
+         squares: squares
+      }]));
+
+      setXIsNext(!xIsNext);
     }
-    
-    function handleClick(i) {}
     
     return (
       <div className="game">
@@ -30,7 +35,7 @@ export default function Game() {
           />
         </div>
         <div className="game-info">
-          <div>{status}</div>
+          <div>{/* status */}</div>
           <ol>{/* TODO */}</ol>
         </div>
       </div>
