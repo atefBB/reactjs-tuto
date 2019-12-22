@@ -60,7 +60,7 @@ export default function Game() {
         <div className="game-board">
           <Board 
             squares={current.squares}
-            onClick={(i) => handleClick(i)}
+            onClick={i => handleClick(i)}
           />
         </div>
         <div className="game-info">
