@@ -27,7 +27,10 @@ export default function Game() {
       setXIsNext(!xIsNext);
     }
 
-    function jumpTo(move) {}
+    function jumpTo(step) {
+       setStepNumber(step);
+       setXIsNext((step % 2) === 0);
+    }
 
     const gameHistory = history;
     const current = gameHistory[gameHistory.length - 1];
